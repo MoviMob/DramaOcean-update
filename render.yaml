@@ -1,0 +1,13 @@
+services:
+  - type: worker
+    name: DramaOceanBot
+    env: python
+    repo: https://github.com/MoviMob/DramaOcean-update
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: python rss_bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: CHANNEL_ID
+        sync: false
